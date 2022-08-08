@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smithing",
+    "base": {
+    "item": "minecraft:netherite_boots"
+    },
+    "addition": {
+    "item": "underseas:prisma_ingot"
+    },
+    "result": {
+    "item": "underseas:prisma_boots",
+    "count": 1
+    }
+}
