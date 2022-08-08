@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "underseas",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Underseas Mod",
+  "description": "An underwater world",
   "authors": [
-    "Me!"
+    "kuzhcola"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/antonhibl/UnderSeasMod",
+    "sources": "https://github.com/antonhibl/UnderSeasMod"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "CC BY-NC-SA 3.0",
+  "icon": "assets/underseas/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "kuzhcola.under.seas.UnderSeas"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "underseas.mixins.json"
   ],
 
   "depends": {

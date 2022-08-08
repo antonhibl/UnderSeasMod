@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "red_sandstone",
+    "sandstone",
+    "magma_block",
+    "glowstone",
+    "obsidian",
+    "crying_obsidian"
+  ]
+}
