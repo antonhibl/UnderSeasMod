@@ -6,8 +6,19 @@ import kuzhcola.under.seas.UnderSeas;
 import kuzhcola.under.seas.items.RegisterItems;
 import kuzhcola.under.seas.materials.PrismaArmorMaterial;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityStatuses;
+import net.minecraft.entity.ai.goal.BreatheAirGoal;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.player.PlayerAbilities;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.ServerMetadata.Players;
+import net.minecraft.server.command.EffectCommand;
+import net.minecraft.server.command.EnchantCommand;
+import net.minecraft.world.gen.placementmodifier.SurfaceWaterDepthFilterPlacementModifier;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -27,34 +38,36 @@ public abstract class EntityMixin {
     private void injectInvulnerability(DamageSource damage, CallbackInfoReturnable<Boolean> cir) {
         ArrayList<ItemStack> items = Lists.newArrayList(this.getArmorItems());
 
-        // Not simply booleans, for the sake of thread-safety (the compiler enforces this)
+        // Not simply booleans, for the sake of thread-safety (the compiler enforces
+        // this)
         AtomicReference<Boolean> hasHelmet = new AtomicReference<>(false);
         AtomicReference<Boolean> hasChestplate = new AtomicReference<>(false);
         AtomicReference<Boolean> hasLeggings = new AtomicReference<>(false);
         AtomicReference<Boolean> hasBoots = new AtomicReference<>(false);
 
         items.forEach((item) -> {
-                    // Check each item and see if it's a piece of our armour. Note that we don't want to just check
-                    // if it's just "a piece of our armour" and increment a counter since we don't want people
-                    // just breaking the game to make this work
+            // Check each item and see if it's a piece of our armour. Note that we don't
+            // want to just check
+            // if it's just "a piece of our armour" and increment a counter since we don't
+            // want people
+            // just breaking the game to make this work
 
-                    if (item.getItem() == RegisterItems.PRISMA_HELMET) {
-                        hasHelmet.set(true);
-                    }
+            if (item.getItem() == RegisterItems.PRISMA_HELMET) {
+                hasHelmet.set(true);
+            }
 
-                    if (item.getItem() == RegisterItems.PRISMA_CHESTPLATE) {
-                        hasChestplate.set(true);
-                    }
+            if (item.getItem() == RegisterItems.PRISMA_CHESTPLATE) {
+                hasChestplate.set(true);
+            }
 
-                    if (item.getItem() == RegisterItems.PRISMA_LEGGINGS) {
-                        hasLeggings.set(true);
-                    }
+            if (item.getItem() == RegisterItems.PRISMA_LEGGINGS) {
+                hasLeggings.set(true);
+            }
 
-                    if (item.getItem() == RegisterItems.PRISMA_BOOTS) {
-                        hasBoots.set(true);
-                    }
-                }
-        );
+            if (item.getItem() == RegisterItems.PRISMA_BOOTS) {
+                hasBoots.set(true);
+            }
+        });
 
         if (hasHelmet.get() && hasChestplate.get() && hasLeggings.get() && hasBoots.get()) {
             // If we have all the pieces of armour, check damage types.
@@ -62,6 +75,7 @@ public abstract class EntityMixin {
             if (UnderSeas.DAMAGE_SOURCES.contains(damage)) {
                 cir.setReturnValue(true);
             }
+
         }
     }
 }

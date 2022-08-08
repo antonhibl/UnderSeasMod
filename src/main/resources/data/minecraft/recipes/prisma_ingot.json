@@ -1,9 +1,9 @@
 {
     "type": "minecraft:smelting",
     "ingredient": {
-        "item": "minecraft:prismarine_block"
+        "item": "minecraft:dark_prismarine"
     },
-    "result": "underseas:prisma_ingot",
+    "result": "undersea:prisma_ingot",
     "experience": 0.5,
     "cookingtime": 1000
 }

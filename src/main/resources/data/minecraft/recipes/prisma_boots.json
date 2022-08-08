@@ -4,10 +4,10 @@
     "item": "minecraft:netherite_boots"
     },
     "addition": {
-    "item": "underseas:prisma_ingot"
+    "item": "undersea:prisma_ingot"
     },
     "result": {
-    "item": "underseas:prisma_boots",
+    "item": "undersea:prisma_boots",
     "count": 1
     }
 }

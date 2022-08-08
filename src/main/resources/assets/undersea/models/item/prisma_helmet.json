@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-    "layer0": "underseas:item/armor/prisma_leggings"
+        "layer0": "undersea:item/armor/prisma_helmet"
     }
 }

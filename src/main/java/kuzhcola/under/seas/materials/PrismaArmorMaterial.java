@@ -38,7 +38,7 @@ public class PrismaArmorMaterial implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return "prisma_ingot";
+        return "prisma_armor";
     }
 
     @Override

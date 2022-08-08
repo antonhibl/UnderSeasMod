@@ -4,10 +4,10 @@
     "item": "minecraft:netherite_leggings"
     },
     "addition": {
-    "item": "underseas:prisma_ingot"
+    "item": "undersea:prisma_ingot"
     },
     "result": {
-    "item": "underseas:prisma_leggings",
+    "item": "undersea:prisma_leggings",
     "count": 1
     }
 }

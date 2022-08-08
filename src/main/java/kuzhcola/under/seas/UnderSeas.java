@@ -3,10 +3,12 @@ package kuzhcola.under.seas;
 import net.fabricmc.api.ModInitializer;
 import com.google.common.collect.Lists;
 
+import kuzhcola.under.seas.enchantments.DeepBreath;
 import kuzhcola.under.seas.items.RegisterItems;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
@@ -33,14 +35,10 @@ public class UnderSeas implements ModInitializer {
 	public static final ArrayList<DamageSource> DAMAGE_SOURCES = Lists.newArrayList(
 			// All the damage sources we should be immune to
 
-			DamageSource.HOT_FLOOR,
-			DamageSource.IN_FIRE,
-			DamageSource.LAVA,
-			DamageSource.LIGHTNING_BOLT,
-			DamageSource.ON_FIRE);
+			DamageSource.DROWN);
 
 	public static final ItemGroup PRISMA_ARMOR = FabricItemGroupBuilder.create(
-			new Identifier("underseas", "prisma_armor"))
+			new Identifier("undersea", "prisma_armor"))
 			.icon(() -> new ItemStack(RegisterItems.PRISMA_INGOT))
 			.build();
 

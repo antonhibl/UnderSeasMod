@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-    "layer0": "underseas:item/prisma_ingot"
+        "layer0": "undersea:item/prisma_ingot"
     }
 }

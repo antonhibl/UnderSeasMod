@@ -4,10 +4,10 @@
     "item": "minecraft:netherite_helmet"
     },
     "addition": {
-    "item": "underseas:prisma_ingot"
+    "item": "undersea:prisma_ingot"
     },
     "result": {
-    "item": "underseas:prisma_helmet",
+    "item": "undersea:prisma_helmet",
     "count": 1
     }
 }

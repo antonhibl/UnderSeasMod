@@ -4,10 +4,10 @@
     "item": "minecraft:netherite_chestplate"
     },
     "addition": {
-    "item": "underseas:prisma_ingot"
+    "item": "undersea:prisma_ingot"
     },
     "result": {
-    "item": "underseas:prisma_chestplate",
+    "item": "undersea:prisma_chestplate",
     "count": 1
     }
 }
