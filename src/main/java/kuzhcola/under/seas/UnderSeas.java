@@ -1,9 +1,9 @@
 package kuzhcola.under.seas;
 
+import kuzhcola.under.seas.effects.DeepBreathEffect;
 import net.fabricmc.api.ModInitializer;
 import com.google.common.collect.Lists;
 
-import kuzhcola.under.seas.enchantments.DeepBreath;
 import kuzhcola.under.seas.items.RegisterItems;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.entity.EquipmentSlot;
@@ -37,6 +37,8 @@ public class UnderSeas implements ModInitializer {
 
 			DamageSource.DROWN);
 
+	public static final StatusEffect DEEP_BREATH = new DeepBreathEffect();
+
 	public static final ItemGroup PRISMA_ARMOR = FabricItemGroupBuilder.create(
 			new Identifier("undersea", "prisma_armor"))
 			.icon(() -> new ItemStack(RegisterItems.PRISMA_INGOT))
@@ -48,6 +50,7 @@ public class UnderSeas implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		RegisterItems.register();
+		Registry.register(Registry.STATUS_EFFECT, new Identifier("undersea", "deep_breath"), DEEP_BREATH);
 
 		LOGGER.info("Underseas Mod Initialized!");
 	}

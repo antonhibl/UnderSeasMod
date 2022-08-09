@@ -17,6 +17,7 @@ public class RegisterItems {
                         new Item.Settings().group(UnderSeas.PRISMA_ARMOR).fireproof());
         public static final Item PRISMA_LEGGINGS = new ArmorItem(PrismaArmorMaterial, EquipmentSlot.LEGS,
                         new Item.Settings().group(UnderSeas.PRISMA_ARMOR).fireproof());
+
         public static final Item PRISMA_BOOTS = new ArmorItem(PrismaArmorMaterial, EquipmentSlot.FEET,
                         new Item.Settings().group(UnderSeas.PRISMA_ARMOR).fireproof());
 
